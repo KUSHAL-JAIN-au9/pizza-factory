@@ -14,10 +14,6 @@ export default {
         "gradient-start": "#FFC0CB", // pink
         "gradient-end": "#FFA500", // orange
       },
-      backgroundImage: (theme) => ({
-        "gradient-color":
-          "linear-gradient(to right, var(--color-gradient-start), var(--color-gradient-end))",
-      }),
     },
   },
   variants: {
@@ -25,9 +21,5 @@ export default {
       backdropFilter: ["responsive"], // or other variants you want to enable
     },
   },
-  plugins: [
-    require("flowbite/plugin"),
-    require("@tailwindcss/forms"),
-    require("tailwindcss-filters"),
-  ],
+  plugins: [require("flowbite/plugin")],
 };
