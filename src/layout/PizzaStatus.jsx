@@ -4,10 +4,10 @@ import PizzaCard from "../components/PizzaCard.jsx";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Heading from "../components/heading.jsx";
 import { useSelector } from "react-redux";
 
 import { Carousel } from "flowbite-react";
+import Header from "../components/Header.jsx";
 
 const PizzaStatus = ({ label, orders }) => {
   const slider = useRef(null);
@@ -39,7 +39,7 @@ const PizzaStatus = ({ label, orders }) => {
       className=" min-h-screen flex flex-col justify-center lg:px-32 px-5 pt-16"
     >
       <div className=" ml-4 flex flex-col items-center lg:flex-row justify-between mb-10 lg:mb-0">
-        <Heading title={label} />
+        <Header title={label} />
       </div>
 
       <div className="w-full mt-5 h-[500px] ">
