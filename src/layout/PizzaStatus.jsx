@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
-import PizzaCard from "../components/PizzaCard";
+import PizzaCard from "../components/PizzaCard.jsx";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Heading from "../components/heading";
+import Heading from "../components/heading.jsx";
 import { useSelector } from "react-redux";
 
 import { Carousel } from "flowbite-react";

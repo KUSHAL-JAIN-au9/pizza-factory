@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import Heading from "./heading";
 import { CalculateTime } from "../utils/utils";
+import Header from "./Header";
 
 const Timer = ({ setIntervalId, seconds, setSeconds }) => {
   useEffect(() => {
@@ -24,7 +24,7 @@ const Timer = ({ setIntervalId, seconds, setSeconds }) => {
 
   return (
     <div className="w-full mx-auto">
-      <Heading title={CalculateTime(seconds)} />
+      <Header title={CalculateTime(seconds)} />
     </div>
   );
 };

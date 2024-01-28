@@ -1,10 +1,10 @@
 import { Button, Label, Select } from "flowbite-react";
 import React, { useState } from "react";
-import Heading from "./heading";
 import { estimatedTime, images } from "../data";
 import { useDispatch, useSelector } from "react-redux";
 import { addOrder } from "../redux/order.reducer";
 import { ORDER_PLACED } from "../constants";
+import Header from "./Header";
 
 const PizzaOrder = () => {
   const [orderCount, setOrderCount] = useState(0);
@@ -60,7 +60,7 @@ const PizzaOrder = () => {
 
   return (
     <div className="w-[100%] h-[30rem] flex flex-col justify-around items-center">
-      <Heading title={`🍕  Order Your Pizza`} />
+      <Header title={`🍕  Order Your Pizza`} />
       <form
         className=" w-1/2 h-[25rem] p-4 flex  flex-col justify-around  bg-[rgba(255,255,255,0.1)] rounded-lg backdrop-blur-[50px] shadow-md "
         onSubmit={handleOrderSubmit}

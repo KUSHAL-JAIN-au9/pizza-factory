@@ -6,7 +6,7 @@ import {
   normalBackground,
 } from "../constants";
 import { useDispatch, useSelector } from "react-redux";
-import { CalculateTime } from "../utils/utils";
+import { CalculateTime } from "../utils/utils.js";
 import { useEffect } from "react";
 import { cancelOrder } from "../redux/order.reducer";
 
