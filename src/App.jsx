@@ -2,7 +2,6 @@ import { Badge, Button } from "flowbite-react";
 import "./App.css";
 import PizzaStatus from "./layout/PizzaStatus";
 import PizzaTable from "./components/PizzaTable";
-import PizzaForm from "./components/pizzaForm";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import {
@@ -11,6 +10,7 @@ import {
   ORDER_PLACED,
   ORDER_READY,
 } from "./constants";
+import PizzaOrder from "./components/PizzaOrder";
 
 function App() {
   const [makingOrders, setMakingOrders] = useState([]);
@@ -49,7 +49,8 @@ function App() {
   console.log("orders", orders);
   return (
     <div className="w-full h-auto flex flex-col ">
-      <PizzaForm />
+      {/* <PizzaForm /> */}
+      <PizzaOrder />
       <PizzaStatus label={"Order Placed 😇 "} orders={placedOrders} />
       <PizzaStatus label={"Order In Making 🧑‍🍳"} orders={makingOrders} />
       <PizzaStatus label={"Order Ready 🍕"} orders={readyOrders} />
