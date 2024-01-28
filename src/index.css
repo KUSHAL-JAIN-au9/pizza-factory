@@ -5,10 +5,29 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    /* deep, dark black */ rgba(31, 31, 31, 1) 60%,
+    /* grayish black */ rgba(69, 69, 69, 1) 100% /* light, grayish black */
+  );
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+label {
+  color: white !important;
+}
+
+select,
+input {
+  color: white !important;
+  background-color: rgba(69, 69, 69, 1) !important;
+  border: none !important;
+}
+
+input::placeholder {
+  color: #999 !important; /* Placeholder text color */
 }

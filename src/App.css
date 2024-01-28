@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@container {
+  .form-bg {
+    @apply h-[34rem] bg-[rgba(255,255,255,0.1)] rounded-lg p-2 backdrop-blur-[50px] shadow-md;
+  }
+}
