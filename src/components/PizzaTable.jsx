@@ -43,74 +43,21 @@ const PizzaTable = () => {
                   )}
                 </Table.Cell>
                 <Table.Cell>
-                  {/* <a
-                    href="#"
-                    className="font-medium text-cyan-600 hover:underline dark:text-cyan-500"
-                  >
-                    Edit
-                  </a> */}
-                  {order.status === ORDER_PLACED ||
-                    (order.status === ORDER_IN_MAKING && (
-                      <Button
-                        gradientMonochrome="failure"
-                        onClick={() =>
-                          dispatch(cancelOrder({ orderId: order?.id }))
-                        }
-                      >
-                        Cancel
-                      </Button>
-                    ))}
+                  {(order.status === ORDER_PLACED ||
+                    order.status === ORDER_IN_MAKING) && (
+                    <Button
+                      gradientMonochrome="failure"
+                      onClick={() =>
+                        dispatch(cancelOrder({ orderId: order?.id }))
+                      }
+                    >
+                      Cancel
+                    </Button>
+                  )}
                 </Table.Cell>
               </Table.Row>
             ))}
-            {/* <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-              <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                {'Apple MacBook Pro 17"'}
-              </Table.Cell>
-              <Table.Cell>Sliver</Table.Cell>
-              <Table.Cell>Laptop</Table.Cell>
-              <Table.Cell>$2999</Table.Cell>
-              <Table.Cell>
-                <a
-                  href="#"
-                  className="font-medium text-cyan-600 hover:underline dark:text-cyan-500"
-                >
-                  Edit
-                </a>
-              </Table.Cell>
-            </Table.Row>
-            <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-              <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                Microsoft Surface Pro
-              </Table.Cell>
-              <Table.Cell>White</Table.Cell>
-              <Table.Cell>Laptop PC</Table.Cell>
-              <Table.Cell>$1999</Table.Cell>
-              <Table.Cell>
-                <a
-                  href="#"
-                  className="font-medium text-cyan-600 hover:underline dark:text-cyan-500"
-                >
-                  Edit
-                </a>
-              </Table.Cell>
-            </Table.Row>
-            <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-              <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                Magic Mouse 2
-              </Table.Cell>
-              <Table.Cell>Black</Table.Cell>
-              <Table.Cell>Accessories</Table.Cell>
-              <Table.Cell>$99</Table.Cell>
-              <Table.Cell>
-                <a
-                  href="#"
-                  className="font-medium text-cyan-600 hover:underline dark:text-cyan-500"
-                >
-                  Edit
-                </a>
-              </Table.Cell> */}
-            {/* </Table.Row> */}
+
             <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
               <Table.Cell>Total Orders:{orders?.length}</Table.Cell>
               <Table.Cell></Table.Cell>

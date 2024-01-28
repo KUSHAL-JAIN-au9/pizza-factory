@@ -4,7 +4,12 @@ import Timer from "./Timer";
 import { Button } from "flowbite-react";
 import { useDispatch } from "react-redux";
 import { updateOrderStatus } from "../redux/order.reducer";
-import { normalBackground, redBackground } from "../constants";
+import {
+  ORDER_PICKED,
+  ORDER_READY,
+  normalBackground,
+  redBackground,
+} from "../constants";
 
 const PizzaCard = ({ id, base, estimatedSec, size, status, type, image }) => {
   const [seconds, setSeconds] = useState(0);
@@ -41,11 +46,13 @@ const PizzaCard = ({ id, base, estimatedSec, size, status, type, image }) => {
         } shadow-lg border border-white rounded-md md:w-4/5 mx-auto absolute -bottom-12 left-0 right-0  `}
       >
         {/* <h1 className="mb-3 text-xl text-neutralGrey font-semibold">{id}</h1> */}
-        <Timer
-          seconds={seconds}
-          setSeconds={setSeconds}
-          setIntervalId={setIntervalId}
-        />
+        {status !== ORDER_PICKED && (
+          <Timer
+            seconds={seconds}
+            setSeconds={setSeconds}
+            setIntervalId={setIntervalId}
+          />
+        )}
         <h1 className="text-2xl my-2">Order Id :{id}</h1>
         {/* <span className="flex items-center text-sm font-medium text-white me-3 justify-center my-2 ">
           <span className="flex w-2.5 h-2.5 bg-blue-600 rounded-full me-1.5 flex-shrink-0"></span>
@@ -59,19 +66,22 @@ const PizzaCard = ({ id, base, estimatedSec, size, status, type, image }) => {
           <span className="flex w-2.5 h-2.5 bg-teal-500 rounded-full me-1.5 flex-shrink-0"></span>
           {size}
         </span>
-        <span className="flex items-center text-sm font-medium text-white me-3 justify-center my-2">
+        {/* <span className="flex items-center text-sm font-medium text-white me-3 justify-center my-2">
           <span className="flex w-2.5 h-2.5 bg-teal-500 rounded-full me-1.5 flex-shrink-0"></span>
           {base}
-        </span>
+        </span> */}
 
-        <Button
-          onClick={() => handleOrderStatus(id)}
-          gradientDuoTone="pinkToOrange"
-          type="submit"
-          className="  px-4 py-2 mx-auto transition duration-300 ease-in-out  "
-        >
-          Next
-        </Button>
+        {
+          <Button
+            onClick={() => handleOrderStatus(id)}
+            gradientDuoTone="pinkToOrange"
+            disabled={status === ORDER_PICKED}
+            type="submit"
+            className="  px-4 py-2 mx-auto transition duration-300 ease-in-out  "
+          >
+            {status !== ORDER_PICKED ? "Next" : "Order Picked"}
+          </Button>
+        }
 
         {/* <p> </p> */}
         {/* <Rating className="w-full text-center flex flex-row flex-wrap items-center justify-around ">
